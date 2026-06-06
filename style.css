@@ -1,0 +1,546 @@
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body{background:#f5f5f5;}
+
+/* NAVBAR */
+/* ================= NAVBAR ================= */
+
+.navbar{
+    position:absolute;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px 100px;
+    background:rgba(0,0,0,0.35);
+    backdrop-filter:blur(8px);
+    z-index:1000;
+}
+
+/* ===== LOGO SECTION ===== */
+
+.logo-box{
+    display:flex;
+    align-items:center;
+}
+
+.logo-box img{
+    height:50px;              /* Bigger logo */
+    width:auto;
+    margin-right:15px;
+}
+
+.brand-text h2{
+    color:white;
+    font-size:26px;
+    font-weight:700;
+    margin:0;
+}
+
+.brand-text p{
+    color:#ddd;
+    font-size:12px;
+    margin:0;
+    letter-spacing:1px;
+}
+
+/* ===== NAVIGATION LINKS ===== */
+
+.navbar ul{
+    list-style:none;
+    display:flex;
+    align-items:center;
+}
+
+.navbar ul li{
+    margin-left:35px;
+}
+
+.navbar ul li a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    font-size:15px;
+    position:relative;
+    transition:0.3s;
+}
+
+/* Underline Hover Animation */
+
+.navbar ul li a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0%;
+    height:2px;
+    background:#00c6ff;
+    transition:0.3s;
+}
+
+.navbar ul li a:hover::after{
+    width:100%;
+}
+
+/* ===== LOGIN BUTTON STYLE ===== */
+
+.navbar ul li:last-child a{
+    background:white;
+    color:black;
+    padding:8px 20px;
+    border-radius:25px;
+    transition:0.3s;
+}
+
+.navbar ul li:last-child a:hover{
+    background:#00c6ff;
+    color:white;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    background:url('hero (2).jpg') center/cover no-repeat;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+.overlay{
+    position:absolute;
+    width:100%;height:100%;
+    background:rgba(0,0,0,0.4);
+}
+.hero-content{position:relative;z-index:2;}
+.hero h1{font-size:60px;font-weight:700;}
+
+.search-bar{
+    margin-top:30px;
+    background:white;
+    padding:15px;
+    border-radius:8px;
+    display:flex;
+    gap:25px;
+}
+.search-bar input,
+.search-bar select{
+    padding:10px;border:1px solid #ddd;border-radius:5px;
+}
+.search-bar button{
+    background:red;color:white;border:none;padding:10px 20px;border-radius:5px;
+}
+
+/* IDEAS */
+.ideas{
+    padding:80px 5%;
+    text-align:center;
+}
+
+.idea-container{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr); /* equal 3 columns */
+    gap:25px;
+    margin-top:40px;
+}
+
+.idea-card{
+    position:relative;
+    width:100%;
+    height:350px;   /* same height for all cards */
+    overflow:hidden;
+    border-radius:12px;
+}
+
+.idea-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;   /* IMPORTANT - makes images same size */
+}
+
+.idea-title{
+    position:absolute;
+    bottom:20px;
+    left:20px;
+    background:white;
+    padding:10px 20px;
+    border-radius:6px;
+}
+
+
+/* LOCATIONS */
+.locations{padding:80px 5%;width:100%;}
+
+.locations h2{
+    margin-bottom:50px;
+}
+
+.location-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.location-card{
+    position:relative;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:all 0.3s ease;
+}
+
+.location-card:hover{
+    transform:translateY(-10px) scale(1.01);
+    box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+/* IMAGE */
+
+.location-card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    transition:0.4s;
+}
+
+.location-card:hover img{
+    transform:scale(1.1);
+}
+
+/* DISCOUNT TAG */
+
+.discount{
+    position:absolute;
+    top:15px;
+    left:15px;
+    background:#c9a24d;
+    color:white;
+    font-weight:600;
+    padding:6px 14px;
+    font-size:12px;
+    border-radius:20px;
+    letter-spacing:0.5px;
+}
+/* CONTENT */
+
+.location-content{
+    padding:20px;
+}
+
+.location-content h3{
+    font-size:20px;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+.location-content p{
+    font-size:14px;
+    color:#777;
+    line-height:1.5;
+    margin-bottom:15px;
+}
+
+/* BUTTON */
+
+.book-btn{
+    background:#c9a24d;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+    display:inline-block;
+}
+
+.book-btn:hover{
+    background:#b8933f;
+    transform:translateY(-2px);
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+    .location-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+    .location-grid{
+        grid-template-columns:1fr;
+    }
+}
+/* ===== CLICKABLE CARDS STYLING ===== */
+
+/* Make idea cards clickable with link */
+.idea-card-link{
+    text-decoration:none;
+    color:inherit;
+    display:flex;
+}
+
+.idea-card-link:hover .idea-card{
+    transform:translateY(-10px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Add cursor pointer to location cards */
+.location-card{
+    cursor:pointer;
+    transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.location-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Make buttons appear clickable */
+.location-card button{
+    cursor:pointer;
+    transition:background-color 0.3s ease;
+}
+
+.location-card a button:hover{
+    background:darkred;
+    opacity:0.9;
+}
+
+/* WHY */
+.why{padding:80px 10%;text-align:center;background:#f0f0f0;}
+.why-container{display:flex;gap:40px;margin-top:40px;}
+.why-box{flex:1;}
+.icon{font-size:40px;margin-bottom:10px;}
+
+/* CONTACT */
+.contact{
+    position:relative;
+    background:url('hero bg.jpg') center/cover no-repeat;
+    padding:100px 10%;
+    
+    display:flex;                 /* ADD THIS */
+    justify-content:center;       /* Horizontal center */
+    align-items:center;           /* Vertical center */
+    min-height:500px;             /* Give height */
+}
+
+.contact-overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+    top:0;
+    left:0;
+}
+
+.contact-box{
+    position:relative;
+    background:white;
+    padding:30px;
+    width:350px;
+    z-index:2;                     /* IMPORTANT */
+    border-radius:10px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.contact-box input,
+.contact-box textarea{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.contact-box button{
+    background:red;
+    color:white;
+    border:none;
+    padding:10px;
+    width:100%;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+
+/* FOOTER */
+ .footer {
+        background: rgba(0,0,0,0.6) url('footerbg.jpg') center/cover no-repeat;
+        color: #ccc;
+        padding: 60px 10%;
+        position: relative;
+    }
+
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 200px;
+    }
+
+    /* COLUMN */
+    .footer-col {
+        flex: 1;
+        min-width: 250px;
+    }
+
+    .footer h2 {
+        color: #fff;
+        margin-bottom: 15px;
+    }
+
+    .footer p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    /* NEWSLETTER */
+    .newsletter {
+        margin-top: 15px;
+        display: flex;
+    }
+
+    .newsletter input {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        outline: none;
+    }
+
+    .newsletter button {
+        background: #c9a24d;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+    .success-msg {
+        color: #4CAF50;
+        font-size: 14px;
+        margin-top: 8px;
+    }
+
+    /* NAVIGATION */
+    .footer ul {
+        list-style: none;
+    }
+
+    .footer ul li {
+        margin: 8px 0;
+    }
+
+    .footer ul li a {
+        text-decoration: none;
+        color: #ccc;
+        transition: 0.3s;
+    }
+
+    .footer ul li a:hover {
+        color: #c9a24d;
+    }
+
+    /* CONTACT INFO */
+    .contact-info p {
+        margin: 10px 0;
+    }
+
+    /* SOCIAL */
+    .social-icons {
+        margin-top: 10px;
+    }
+
+    .social-icons i {
+        margin-right: 15px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .social-icons i:hover {
+        color: #c9a24d;
+    }
+
+    /* BOTTOM BAR */
+    .footer-bottom {
+        border-top: 1px solid #333;
+        margin-top: 40px;
+        padding-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        font-size: 14px;
+    }
+
+    .footer-bottom a {
+        color: #ccc;
+        text-decoration: none;
+        margin-left: 15px;
+    }
+
+    .footer-bottom a:hover {
+        color: #c9a24d;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:768px) {
+        .footer-container {
+            flex-direction: column;
+        }
+
+        .footer-bottom {
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+
+
+    /* CARD IMPROVEMENT */
+
+.location-card{
+    position:relative;
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.location-card:hover{
+    transform:translateY(-8px);
+}
+
+/* Discount Label */
+
+.discount{
+    position:absolute;
+    top:15px;
+    left:15px;
+    background:#c9a24d;
+    color:white;
+    font-weight:600;
+    padding:6px 12px;
+    font-size:13px;
+    border-radius:4px;
+}
+
+/* Button */
+
+.book-btn{
+    background:#c9a24d;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    margin-top:10px;
+    border-radius:5px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.book-btn:hover{
+    background:#b8933f;
+}
